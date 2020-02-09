@@ -2,41 +2,33 @@ package com.shanonim.cardsample
 
 import android.os.Bundle
 import android.view.MotionEvent
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.shanonim.cardsample.infra.hideSystemUI
 import com.shanonim.cardsample.utils.GlassGestureDetector
 
 abstract class BaseActivity : AppCompatActivity(), GlassGestureDetector.OnGestureListener {
-    private var decorView: View? = null
+
     private var glassGestureDetector: GlassGestureDetector? = null
 
-    protected override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (getSupportActionBar() != null) {
-            getSupportActionBar()?.hide()
-        }
-        decorView = getWindow().getDecorView()
-        decorView!!
-            .setOnSystemUiVisibilityChangeListener { visibility ->
-                if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
-                    hideSystemUI()
-                }
-            }
+        supportActionBar?.hide()
+        window.decorView.hideSystemUI()
         glassGestureDetector = GlassGestureDetector(this, this)
     }
 
-    protected override fun onResume() {
+    override fun onResume() {
         super.onResume()
-        hideSystemUI()
+        window.decorView.hideSystemUI()
     }
 
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+    override fun dispatchTouchEvent(event: MotionEvent?): Boolean {
         glassGestureDetector?.let { glassGestureDetector ->
-            return if (glassGestureDetector.onTouchEvent(ev)) {
+            return if (glassGestureDetector.onTouchEvent(event)) {
                 true
-            } else super.dispatchTouchEvent(ev)
+            } else super.dispatchTouchEvent(event)
         }
-        return super.dispatchTouchEvent(ev)
+        return super.dispatchTouchEvent(event)
     }
 
     override fun onGesture(gesture: GlassGestureDetector.Gesture?): Boolean {
@@ -47,14 +39,5 @@ abstract class BaseActivity : AppCompatActivity(), GlassGestureDetector.OnGestur
             }
             else -> false
         }
-    }
-
-    private fun hideSystemUI() {
-        decorView!!.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
-            or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-            or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-            or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-            or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-            or View.SYSTEM_UI_FLAG_FULLSCREEN)
     }
 }
