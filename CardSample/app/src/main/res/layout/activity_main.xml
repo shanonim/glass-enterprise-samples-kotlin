@@ -21,7 +21,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tabBackground="@drawable/page_indicator_selector"
+        app:tabBackground="@drawable/selector_page_indicator"
         app:tabGravity="center"
         app:tabIndicatorHeight="0dp" />
 

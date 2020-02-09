@@ -16,7 +16,7 @@ class MenuListAdapter internal constructor(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GlassMenuItemViewHolder {
         val view: View = LayoutInflater.from(context)
-            .inflate(R.layout.main_layout, parent, false)
+            .inflate(R.layout.fragment_main, parent, false)
         return GlassMenuItemViewHolder(view, onItemChosenListener)
     }
 

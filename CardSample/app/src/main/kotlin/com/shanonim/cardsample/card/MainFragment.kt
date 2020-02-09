@@ -13,12 +13,12 @@ import android.widget.Toast
 import com.shanonim.cardsample.R
 import com.shanonim.cardsample.infra.BaseFragment
 
-class MainLayoutFragment : BaseFragment() {
+class MainFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        val view: View = inflater.inflate(R.layout.main_layout, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_main, container, false)
         arguments?.let { arguments ->
             val textView = TextView(getContext())
             textView.setText(
@@ -69,8 +69,8 @@ class MainLayoutFragment : BaseFragment() {
 
         fun newInstance(
             text: String?, footer: String?, timestamp: String?, menu: Int?
-        ): MainLayoutFragment {
-            val myFragment = MainLayoutFragment()
+        ): MainFragment {
+            val myFragment = MainFragment()
             val args = Bundle()
             args.putString(TEXT_KEY, text)
             args.putString(FOOTER_KEY, footer)

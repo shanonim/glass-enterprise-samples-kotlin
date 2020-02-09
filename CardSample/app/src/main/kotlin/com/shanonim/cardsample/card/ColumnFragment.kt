@@ -11,13 +11,13 @@ import android.widget.TextView
 import com.shanonim.cardsample.R
 import com.shanonim.cardsample.infra.BaseFragment
 
-class ColumnLayoutFragment : BaseFragment() {
+class ColumnFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view: View = inflater.inflate(R.layout.left_column_layout, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_column, container, false)
         arguments?.let { arguments ->
             val imageView = ImageView(getActivity())
             imageView.setImageResource(arguments.getInt(IMAGE_KEY))
@@ -59,8 +59,8 @@ class ColumnLayoutFragment : BaseFragment() {
         fun newInstance(
             image: Int, text: String?, footer: String?,
             timestamp: String?
-        ): ColumnLayoutFragment {
-            val myFragment = ColumnLayoutFragment()
+        ): ColumnFragment {
+            val myFragment = ColumnFragment()
             val args = Bundle()
             args.putInt(IMAGE_KEY, image)
             args.putString(TEXT_KEY, text)

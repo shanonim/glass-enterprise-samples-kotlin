@@ -17,14 +17,14 @@ class MainActivity : BaseActivity() {
     private lateinit var viewPager: ViewPager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.view_pager_layout)
+        setContentView(R.layout.activity_main)
         val screenSlidePagerAdapter = ScreenSlidePagerAdapter(
             getSupportFragmentManager()
         )
         viewPager = findViewById(R.id.viewPager)
         viewPager.setAdapter(screenSlidePagerAdapter)
         fragments.add(
-            MainLayoutFragment
+            MainFragment
                 .newInstance(
                     getString(R.string.text_sample), getString(
                         R.string.footnote_sample
@@ -34,7 +34,7 @@ class MainActivity : BaseActivity() {
                 )
         )
         fragments.add(
-            MainLayoutFragment
+            MainFragment
                 .newInstance(
                     getString(R.string.different_options), getString(
                         R.string.empty_string
@@ -44,7 +44,7 @@ class MainActivity : BaseActivity() {
                 )
         )
         fragments.add(
-            ColumnLayoutFragment
+            ColumnFragment
                 .newInstance(
                     R.drawable.ic_note_50, getString(R.string.columns_sample),
                     getString(R.string.footnote_sample), getString(
@@ -53,7 +53,7 @@ class MainActivity : BaseActivity() {
                 )
         )
         fragments.add(
-            MainLayoutFragment
+            MainFragment
                 .newInstance(
                     getString(R.string.like_this_sample), getString(
                         R.string.empty_string

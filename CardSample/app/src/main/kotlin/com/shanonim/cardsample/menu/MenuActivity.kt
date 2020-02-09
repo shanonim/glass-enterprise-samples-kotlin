@@ -21,7 +21,7 @@ class MenuActivity : BaseActivity(), OnItemChosenListener {
     protected override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val recyclerView: RecyclerView = getLayoutInflater()
-            .inflate(R.layout.recycler_view_layout, null, false) as RecyclerView
+            .inflate(R.layout.activity_menu, null, false) as RecyclerView
         adapter = MenuListAdapter(
             this, ItemDiffComparator(), menuItems,
             this
