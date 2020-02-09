@@ -1,10 +1,8 @@
-package com.shanonim.cardsample
+package com.shanonim.cardsample.infra
 
 import android.os.Bundle
 import android.view.MotionEvent
 import androidx.appcompat.app.AppCompatActivity
-import com.shanonim.cardsample.infra.hideSystemUI
-import com.shanonim.cardsample.utils.GlassGestureDetector
 
 abstract class BaseActivity : AppCompatActivity(), GlassGestureDetector.OnGestureListener {
 

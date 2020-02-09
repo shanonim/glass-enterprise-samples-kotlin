@@ -1,4 +1,4 @@
-package com.shanonim.cardsample.fragments
+package com.shanonim.cardsample.infra
 
 import android.content.Intent
 import androidx.fragment.app.Fragment
@@ -8,11 +8,16 @@ abstract class BaseFragment : Fragment(), OnSingleTapUpListener {
     override fun onSingleTapUp() {
         arguments?.let {
             val menu: Int =
-                it.getInt(MENU_KEY, MENU_DEFAULT_VALUE)
+                it.getInt(
+                    MENU_KEY,
+                    MENU_DEFAULT_VALUE
+                )
             if (menu != MENU_DEFAULT_VALUE) {
                 val intent = Intent(getActivity(), MenuActivity::class.java)
                 intent.putExtra(MENU_KEY, menu)
-                startActivityForResult(intent, REQUEST_CODE)
+                startActivityForResult(intent,
+                    REQUEST_CODE
+                )
             }
         }
     }

@@ -1,4 +1,4 @@
-package com.shanonim.cardsample.utils
+package com.shanonim.cardsample.infra
 
 import android.content.Context
 import android.view.GestureDetector

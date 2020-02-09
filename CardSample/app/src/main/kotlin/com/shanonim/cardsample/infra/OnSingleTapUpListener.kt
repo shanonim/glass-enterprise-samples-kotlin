@@ -1,4 +1,4 @@
-package com.shanonim.cardsample.fragments
+package com.shanonim.cardsample.infra
 
 interface OnSingleTapUpListener {
     fun onSingleTapUp()

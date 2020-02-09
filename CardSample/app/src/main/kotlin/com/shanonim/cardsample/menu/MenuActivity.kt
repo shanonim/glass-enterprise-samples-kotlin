@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
-import com.shanonim.cardsample.BaseActivity
+import com.shanonim.cardsample.infra.BaseActivity
 import com.shanonim.cardsample.R
 import com.shanonim.cardsample.menu.GlassMenuItem.ItemDiffComparator
 import com.shanonim.cardsample.menu.GlassMenuItemViewHolder.OnItemChosenListener

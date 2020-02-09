@@ -1,4 +1,4 @@
-package com.shanonim.cardsample.fragments
+package com.shanonim.cardsample.card
 
 import android.app.Activity
 import android.content.Intent
@@ -11,6 +11,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.shanonim.cardsample.R
+import com.shanonim.cardsample.infra.BaseFragment
 
 class MainLayoutFragment : BaseFragment() {
 

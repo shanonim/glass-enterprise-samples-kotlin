@@ -1,4 +1,4 @@
-package com.shanonim.cardsample
+package com.shanonim.cardsample.card
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,10 +6,10 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import com.shanonim.cardsample.fragments.BaseFragment
-import com.shanonim.cardsample.fragments.ColumnLayoutFragment
-import com.shanonim.cardsample.fragments.MainLayoutFragment
-import com.shanonim.cardsample.utils.GlassGestureDetector
+import com.shanonim.cardsample.R
+import com.shanonim.cardsample.infra.BaseFragment
+import com.shanonim.cardsample.infra.BaseActivity
+import com.shanonim.cardsample.infra.GlassGestureDetector
 import java.util.ArrayList
 
 class MainActivity : BaseActivity() {
@@ -26,28 +26,38 @@ class MainActivity : BaseActivity() {
         fragments.add(
             MainLayoutFragment
                 .newInstance(
-                    getString(R.string.text_sample), getString(R.string.footnote_sample),
-                    getString(R.string.timestamp_sample), R.menu.main_menu
+                    getString(R.string.text_sample), getString(
+                        R.string.footnote_sample
+                    ),
+                    getString(R.string.timestamp_sample),
+                    R.menu.main_menu
                 )
         )
         fragments.add(
             MainLayoutFragment
                 .newInstance(
-                    getString(R.string.different_options), getString(R.string.empty_string),
-                    getString(R.string.empty_string), R.menu.special_menu
+                    getString(R.string.different_options), getString(
+                        R.string.empty_string
+                    ),
+                    getString(R.string.empty_string),
+                    R.menu.special_menu
                 )
         )
         fragments.add(
             ColumnLayoutFragment
                 .newInstance(
                     R.drawable.ic_note_50, getString(R.string.columns_sample),
-                    getString(R.string.footnote_sample), getString(R.string.timestamp_sample)
+                    getString(R.string.footnote_sample), getString(
+                        R.string.timestamp_sample
+                    )
                 )
         )
         fragments.add(
             MainLayoutFragment
                 .newInstance(
-                    getString(R.string.like_this_sample), getString(R.string.empty_string),
+                    getString(R.string.like_this_sample), getString(
+                        R.string.empty_string
+                    ),
                     getString(R.string.empty_string), null
                 )
         )

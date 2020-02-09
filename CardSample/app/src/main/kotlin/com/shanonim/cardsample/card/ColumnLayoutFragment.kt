@@ -1,4 +1,4 @@
-package com.shanonim.cardsample.fragments
+package com.shanonim.cardsample.card
 
 import android.graphics.Typeface
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.shanonim.cardsample.R
+import com.shanonim.cardsample.infra.BaseFragment
 
 class ColumnLayoutFragment : BaseFragment() {
 
